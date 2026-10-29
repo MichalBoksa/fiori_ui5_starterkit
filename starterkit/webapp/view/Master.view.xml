@@ -1,0 +1,43 @@
+<mvc:View controllerName="stk.starterkit.controller.Master"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <!-- <content>  -->
+    <!-- <Image width="90%" height="80%" id="_IDGenImage" src ="https://gospodarczy.lublin.eu/wp-content/uploads/sites/9/2021/01/banners-for-pr_1540x866_051-5.jpg"/>
+    </content>
+    <Carousel id="_IDGenCarousel" loop="true" height="20%" >
+    <pages>
+        <Image width="90%" height="80%" id="_IDLoop1" src ="https://companieslogo.com/img/orig/CAP.PA_BIG-cbc06f01.png?t=1720244491"/>
+        <Image width="90%" height="80%" id="_IDLoop2" src ="https://gospodarczy.lublin.eu/wp-content/uploads/sites/9/2021/01/banners-for-pr_1540x866_051-5.jpg"/>
+        </pages>
+    </Carousel> -->
+
+    <!-- <Table id="_IDGenTable" items="{path: '/Customers'}" >
+    <headerToolbar>
+    <Toolbar id="_IDGenToolbar">
+      <Title id="_IDGenTitle1" text="Klienci" />
+            <ToolbarSpacer id="_IDGenToolbarSpacer" />
+            <Input id="_IDGenInput" width="18rem" placeholder="Wpisz nazwę firmy" liveChange=".setCompanyFilter"/>
+       <Button id="SortCountryButton" press=".onSortByCountry" icon="sap-icon://sort"/>
+       <Button id="ExportExcelButton" press=".onPressGenerateExecelReport" text="Export customer list"/>
+    </Toolbar>
+    </headerToolbar>
+<columns>
+<Column id="_IDGenColumn1" >
+<Label id="_IDGenLabel"  text="{i18n>companyName}"/>
+</Column>
+<Column id="_IDGenColumn2" >
+<Label id="_IDGenLabel1"  text="{i18n>country}"/>
+</Column>
+</columns>  
+
+<items>
+<ColumnListItem id="_IDGenColumnListItem" >
+<Text id="_IDGenText1"  text="{CompanyName}"/>
+<Text id="_IDGenText2" text="{= ${Country} === 'USA' ? 'United States of America' : ${Country}}" />
+</ColumnListItem>
+</items>
+    </Table> -->
+    
+    </Page>
+</mvc:View>

@@ -1,0 +1,38 @@
+<mvc:View controllerName="stk.starterkit.controller.CustomersList"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustoData/1" id="CustomersList"
+        showNavButton="true" navButtonPress="handleNavButtonPress" title="CompanyList">
+
+ <Table id="CustomerListTable" items="{path: '/Customers'}" class="strippedTable" >
+    <headerToolbar>
+    <Toolbar id="_IDGenToolbar">
+      <Title id="_IDGenTitle1" text="Klienci" />
+            <ToolbarSpacer id="_IDGenToolbarSpacer" />
+            <Input id="_IDGenInput" width="18rem" placeholder="Wpisz nazwę firmy" liveChange=".setCompanyFilter"/>
+       <Button id="SortCountryButton" press=".onSortByCountry" icon="sap-icon://sort"/>
+       <Button id="ExportExcelButton" press=".onPressGenerateExecelReport" text="Export customer list"/>
+       <Button id="CreateCustomerButton" press=".onCreateCustomerPress" text="{i18n>createCustomer}" class="sapUiMediumMarginBegin sapUiTinyMarginTopBottom"/>
+       <Button id="PerformanceButton"  text="Performance" press=".onPerformancePress"/>
+    </Toolbar>
+    </headerToolbar>
+<columns>
+<Column id="_IDGenColumn1" >
+<Label id="_IDGenLabel"  text="{i18n>companyName}"/>
+</Column>
+<Column id="_IDGenColumn2" >
+<Label id="_IDGenLabel1"  text="{i18n>country}"/>
+</Column>
+</columns>  
+
+<items>
+<ColumnListItem id="_IDGenColumnListItem" type="Navigation" press="onCustomerPress" >
+<Text id="_IDGenText1"  text="{CompanyName}"/>
+<Text id="_IDGenText2" text="{= ${Country} === 'USA' ? 'United States of America' : ${Country}}" />
+</ColumnListItem>
+</items>
+    </Table>
+        
+    </Page>
+</mvc:View>

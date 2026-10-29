@@ -1,0 +1,156 @@
+{
+  "_version": "1.73.1",
+  "sap.app": {
+    "id": "stk.starterkit",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.33.0",
+      "toolsId": "f1065b7e-f377-4df7-8088-048bc7a1893e"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/V2/Northwind/Northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.136.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ui.layout": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "stk.starterkit.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": false,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "stk.starterkit.view",
+        "async": true,
+        "viewPath": "stk.starterkit.view"
+      },
+      "routes": [
+        {
+          "name": "CustomersList",
+          "pattern": "",
+          "target": [
+            "CustomersList"
+          ]
+        },
+        {
+          "name": "CustomerDetails",
+          "pattern": "CustomerDetails/{CustomerID}",
+          "target": [
+            "CustomerDetails"
+          ]
+        },
+        {
+          "name": "CreateCustomer",
+          "pattern": "CreateCustomer",
+          "target": [
+            "CreateCustomer"
+          ]
+        },
+        {
+          "name": "EmployeesList",
+          "pattern": "EmployeesList",
+          "target": [
+            "EmployeesList"
+          ]
+        }
+      ],
+      "targets": {
+        "CustomersList": {
+          "viewName": "CustomersList",
+          "viewLevel": "1",
+          "viewId": "CustomersList",
+          "viewType": "XML"
+        },
+        "CustomerDetails": {
+          "viewName": "CustomerDetails",
+          "viewLevel": "2",
+          "viewId": "CustomerDetails",
+          "viewType": "XML"
+        },
+        "CreateCustomer": {
+          "viewName": "CreateCustomer",
+          "viewType": "XML",
+          "viewId": "CreateCustomer",
+          "viewLevel": 2
+        },
+        "EmployeesList": {
+          "viewName": "EmployeesList",
+          "viewType": "XML",
+          "viewId": "EmployeesList",
+          "viewLevel": 2
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "stk.starterkit.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

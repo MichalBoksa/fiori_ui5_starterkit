@@ -1,0 +1,47 @@
+<mvc:View
+    controllerName="stk.starterkit.controller.CreateCustomer"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    displayBlock="true"
+>
+    <Page
+        id="createCustomerPage"
+        title="Create New Customer"
+        showNavButton="true"
+        navButtonPress=".onNavBack"
+    >
+        <headerContent>
+            <Button id="_IDGenButton1"
+                text="Create"
+                icon="sap-icon://accept"
+                press=".onCreate"
+            />
+        </headerContent>
+
+        <content>
+            <form:SimpleForm id="_IDGenSimpleForm"
+                editable="true"
+                layout="ResponsiveGridLayout"
+            >
+                <Label id="_IDGenLabelCreateCustomer"
+                    text="Customer ID"
+                    required="true"
+                />
+                <Input
+                    id="CustomerIDCreateCustomer"
+                />
+
+                <Label id="_IDGenLabel1CreateCustomer"
+                    text="Customer Name"
+                    required="true"
+                />
+                <Input
+                    id="CustomerNameCreateCustomer"
+                    maxLength="40"
+                    placeholder="Nazwa firmy"
+                />
+            </form:SimpleForm>
+        </content>
+    </Page>
+</mvc:View>

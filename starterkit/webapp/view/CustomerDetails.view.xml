@@ -1,0 +1,44 @@
+<mvc:View controllerName="stk.starterkit.controller.CustomerDetails"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustoData/1" id="CustomerDetails"
+        showNavButton="true" navButtonPress="handleNavButtonPress" title="{CompanyName}">
+    <Toolbar id="_IDGenToolbar2">
+      <Title id="_IDGenTitle" text="{CompanyName}" />
+            <ToolbarSpacer id="_IDGenToolbarSpacer2" />
+ <Button id="ContacDetailsButton" press=".onContactInfoButtonPress" text="Show Contact Info"/>
+    </Toolbar>  
+    
+    <Table id="_IDGenTable2"
+            items="{Orders}" >
+    <columns>
+    <Column id="_IDGenColumn" >
+    <Label id="_IDGenLabel2" text="{i18n>OrderID}"/>
+    </Column>
+        <Column id="_IDGenColumn3" >
+    <Label id="_IDGenLabel3" text="{i18n>Employee}"/>
+    </Column>
+        <Column id="_IDGenColumn4" >
+    <Label id="_IDGenLabel4" text="{i18n>OrderDate}"/>
+    </Column>
+    </columns>
+
+    <items>
+    <ColumnListItem id="_IDGenColumnListItem1" >
+    <cells>
+    <Text id="_IDGenText3" text="{OrderID}"></Text>
+    <Text id="_IDGenText4" text="{parts: [{path: 'Employee/FirstName'}, {path: 'Employee/LastName'}], formatter: '.formatter.formatName'}"></Text>
+    <Text id="_IDGenText5" text="{
+                                path: 'OrderDate',
+                                type: 'sap.ui.model.type.DateTime',
+                                formatOptions: {
+                                            pattern: 'dd.MM.yyyy',
+                                            UTC: true }
+    }"></Text>
+    </cells>
+    </ColumnListItem>
+    </items>
+    </Table>  
+    </Page>
+</mvc:View>

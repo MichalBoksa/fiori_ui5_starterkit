@@ -1,0 +1,62 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+>
+    <Dialog
+        id="contactDialog"
+        title="{i18n>contactDetails}"
+        contentWidth="30rem"
+    >
+        <content>
+            <form:Form id="_IDGenForm1"
+                editable="false"
+                class="sapUiSmallMargin"
+            >
+                <form:layout>
+                    <form:ResponsiveGridLayout id="_IDGenResponsiveGridLayout" />
+                </form:layout>
+
+                <form:formContainers>
+                    <form:FormContainer id="_IDGenFormContainer">
+                        <form:formElements>
+                            <form:FormElement id="_IDGenFormElement" label="Name">
+                                <form:fields>
+                                    <Text id="_IDGenText" text="{ContactName}" />
+                                </form:fields>
+                            </form:FormElement>
+
+                            <form:FormElement id="_IDGenFormElement1" label="Contact Title">
+                                <form:fields>
+                                    <Text id="_IDGenText6" text="{ContactTitle}" />
+                                </form:fields>
+                            </form:FormElement>
+
+                            <form:FormElement id="_IDGenFormElement2" label="Address">
+                                <form:fields>
+                                    <Text id="_IDGenText7"
+                                        text="{Address} {City} {Country}"
+                                    />
+                                </form:fields>
+                            </form:FormElement>
+
+                            <form:FormElement id="_IDGenFormElement3" label="Phone">
+                                <form:fields>
+                                    <Text id="_IDGenText8" text="{Phone}" />
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                    </form:FormContainer>
+                </form:formContainers>
+            </form:Form>
+        </content>
+
+        <endButton>
+            <Button id="_IDGenButton"
+                text="Close"
+                icon="sap-icon://decline"
+                press="onCloseContactDialog"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

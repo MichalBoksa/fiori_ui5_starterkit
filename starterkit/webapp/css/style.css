@@ -1,0 +1,15 @@
+.blueText tr:first-child span {
+    color: #00f !important;
+}
+
+.blueText tr:hover span {
+    color: #00f !important;
+}
+
+.strippedTable tbody>tr:nth-child(odd)>td {
+    background-color: #e6e6e6;
+}
+
+.strippedTable tbody>tr:nth-child(even)>td {
+    background-color: #ffffff;
+}
